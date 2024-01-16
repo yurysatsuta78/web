@@ -1,0 +1,48 @@
+﻿@using Models
+@using Classes
+@model NewsViewModel
+
+@{
+    ViewData["Title"] = "Новости";
+}
+
+@{
+    int itemsPerRow = 2;
+    double rowCount = Math.Ceiling((double)Model.News.Count / itemsPerRow);
+    var newsArray = Model.News.ToArray();
+}
+
+@for(int row = 0; row < rowCount; row++)
+{
+    <div class="newsrow">
+        @for(int col = 0; col < itemsPerRow; col++)
+        {
+            int index = row * itemsPerRow + col;
+            if (index < Model.News.Count)
+            {
+                var base64Image = Convert.ToBase64String(newsArray[index].Image);
+                var source = String.Format("data:image/png;base64,{0}", base64Image);
+                <div class="newsdiv">
+                    <div class="newstitlediv"><label class="newstitle">@newsArray[index].Title</label></div>
+                    <img class="newsimage" src="@source" />
+                    <div class="newsdescdiv"><label class="newsdesc">@newsArray[index].Description</label></div>
+                    <div class="newsbottomdiv">
+                        <div>
+                            <label class="datelabel">@newsArray[index].Date</label>
+                        </div>
+                        @if(CurrentUser.admin == 1)
+                        {
+                            <div>
+                                <a class="deletenewbutton" href="DeleteNews?id=@newsArray[index].ID">Удалить</a>
+                                <a class="deletenewbutton" href="EditNews?id=@newsArray[index].ID">Редактировать</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        }
+    </div>
+}
+
+
+

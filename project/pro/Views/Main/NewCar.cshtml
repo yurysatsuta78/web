@@ -1,0 +1,58 @@
+﻿@using Models
+@model Car
+
+@{
+    ViewData["Title"] = "Добавить автомобиль";
+}
+
+<div class="addnewpagediv">
+    <div class="addnewdiv">
+        <form class="regform" asp-asp-controller="Main" asp-action="AddCar" enctype="multipart/form-data">
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="Brand"></label></div>
+            <input class="reginput" asp-for="Brand" />
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="Brand"></span></div>
+
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="Model"></label></div>
+            <input class="reginput" asp-for="Model" />
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="Model"></span></div>
+
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="Year"></label></div>
+            <input class="reginput" asp-for="Year" />
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="Year"></span></div>
+
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="Price"></label></div>
+            <input class="reginput" asp-for="Price" />
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="Price"></span></div>
+
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="EngineVolume"></label></div>
+            <input class="reginput" asp-for="EngineVolume" />
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="EngineVolume"></span></div>
+
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="EngineType"></label></div>
+            <input class="reginput" asp-for="EngineType" />
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="EngineType"></span></div>
+
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="DriveUnit"></label></div>
+            <input class="reginput" asp-for="DriveUnit" />
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="DriveUnit"></span></div>
+
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="Transmission"></label></div>
+            <input class="reginput" asp-for="Transmission" />
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="Transmission"></span></div>
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="Image"></label></div>
+            <div class="regtextdiv"><input class="selectfile" type="file" asp-for="Image" /></div>
+            <div class="regtextdiv"><span class="regerrorspan">@ViewBag.ImageCheck</span></div>
+
+            <div><input type="submit" class="regbtn" value="Добавить новость" /></div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿@using Models
+@model RegViewModel
+
+<form class="regform" method="post" asp-controller="Main" asp-action="Reg">
+            <div class="regtextdiv"><label class="reglabel" asp-for="Name"></label></div>
+            <input class="reginput" asp-for="Name"/>
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="Name"></span></div>
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="Surname"></label></div>
+            <input class="reginput" asp-for="Surname"/>
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="Surname"></span></div>
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="UserName"></label></div>
+            <input class="reginput" asp-for="UserName"/>
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="UserName"></span></div>
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="Password"></label></div>
+            <input type="password" class="reginput" asp-for="Password"/>
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="Password"></span></div>
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="PhoneNumber"></label></div>
+            <input class="reginput" asp-for="PhoneNumber"/>
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="PhoneNumber"></span></div>
+
+            <div><input type="submit" class="regbtn" value="Зарегистрироваться"/></div>
+        </form>

@@ -1,0 +1,24 @@
+﻿@using Models
+@model LoginViewModel
+
+@if(CurrentUser.username == String.Empty)
+{
+    <form class="regform" method="post" asp-controller="Main" asp-action="Log">
+        <div class="regtextdiv"><label class="reglabel" asp-for="AuthUserName">Логин</label></div>
+        <input class="reginput" asp-for="AuthUserName" />
+        <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="AuthUserName"></span></div>
+
+        <div class="regtextdiv"><label class="reglabel" asp-for="AuthPassword">Пароль</label></div>
+        <input type="password" class="reginput" asp-for="AuthPassword" />
+        <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="AuthPassword"></span></div>
+
+        <div class="regtextdiv"><span class="@ViewBag.SuccessStyle">@ViewBag.Success</span></div>
+
+        <div><input type="submit" class="regbtn" value="Авторизоваться" /></div>
+    </form>
+
+}
+else
+{
+    <label class="alreadyloginlabel">Вы уже авторизованы</label>
+}

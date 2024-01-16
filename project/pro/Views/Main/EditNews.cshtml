@@ -1,0 +1,25 @@
+﻿@using Models
+@model EditNewsModel
+
+@{
+    ViewData["Title"] = "Редактировать новость";
+}
+
+<div class="addnewpagediv">
+    <div class="addnewdiv">
+        <form class="regform" asp-asp-controller="Main" asp-action="EditNew" enctype="multipart/form-data">
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="Title"></label></div>
+            <input class="reginput" asp-for="Title" value="@Model.Title"/>
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="Title"></span></div>
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="Description"></label></div>
+            <textarea class="descinput" asp-for="Description">@Model.Description</textarea>
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="Description"></span></div>
+
+            <input type="hidden" asp-for="Id" value="@Model.Id">
+
+            <div><input type="submit" class="regbtn" value="Изменить новость" /></div>
+        </form>
+    </div>
+</div>

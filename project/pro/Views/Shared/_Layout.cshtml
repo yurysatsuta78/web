@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/pro.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <span class="logo">AVTO.<span class="logo1">by</span></span>
+        <div class="navdiv">
+        <nav>
+            <a href="/Main/News">Новости</a>
+                @if (CurrentUser.admin == 1)
+                {
+                    <a href="/Main/AddNew">Добавить новость</a>
+                }
+            <a href="/Main/Authorization">Авторизация</a>
+            <a href="/Main/CarList">Автомобили</a>
+        </nav>
+            @if (CurrentUser.username == String.Empty)
+            {
+                <div class="currentuserdiv">
+                    <span class="currentuserlabel">Вы не авторизованы</span>
+                </div>
+            }
+            else
+            {
+                <div class="currentuserdiv">
+                    <form class="logoutbtnform" method="post" asp-controller="Main" asp-action="LogOut">
+                        <input class="logoutbtn" type="submit" value="выйти"/>
+                    </form>
+                    <span class="currentuserlabel">@CurrentUser.username</span>
+                </div>
+            }
+        </div>
+    </header>
+    <div class="container, div80">
+        <div class="titlediv">
+            <h1 class="title">@ViewData["Title"]</h1>
+        </div>
+            @RenderBody()
+    </div>
+    <footer>
+        <label>Сайт Сацуты Юрия 21ИТ-1</label>
+    </footer>
+</body>
+</html>

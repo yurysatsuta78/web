@@ -1,0 +1,28 @@
+﻿@using Models
+@model News
+
+@{
+    ViewData["Title"] = "Добавить новость";
+}
+
+<div class="addnewpagediv">
+    <div class="addnewdiv">
+        <form class="regform" asp-asp-controller="Main" asp-action="SendNew" enctype="multipart/form-data">
+            <div class="regtextdiv"><label class="reglabel" asp-for="Title"></label></div>
+            <input class="reginput" asp-for="Title" />
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="Title"></span></div>
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="Description"></label></div>
+            <textarea class="descinput" asp-for="Description"></textarea>
+            <div class="regtextdiv"><span class="regerrorspan" asp-validation-for="Description"></span></div>
+
+            <div class="regtextdiv"><label class="reglabel" asp-for="Image"></label></div>
+            <div class="regtextdiv"><input class="selectfile" type="file" asp-for="Image" /></div>            
+            <div class="regtextdiv"><span class="regerrorspan">@ViewBag.ImageCheck</span></div>
+
+@*             <div class="regtextdiv"><span class="@ViewBag.SuccessStyle">@ViewBag.Success</span></div> *@
+
+            <div><input type="submit" class="regbtn" value="Добавить новость" /></div>
+        </form>
+    </div>
+</div>

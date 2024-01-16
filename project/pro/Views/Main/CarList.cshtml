@@ -1,0 +1,55 @@
+﻿@using Models
+@using Classes
+@model CarsViewModel
+
+@{
+    ViewData["Title"] = "Автомобили";
+}
+
+@{
+    int itemsPerRow = 3;
+    double rowCount = Math.Ceiling((double)Model.Cars.Count / itemsPerRow);
+    var carsArray = Model.Cars.ToArray();
+}
+
+@if(CurrentUser.admin == 1)
+{
+    <div class="newcarlinkdiv"><a class="newcarlink" href="NewCar">Добавить новый автомобиль</a></div>
+}
+<div class="newcarlinkdiv"><label class="numberlabel">Захотели приобрести автомобиль? Звоните по номеру: +375291449418</label></div>
+@for (int row = 0; row < rowCount; row++)
+{
+    <div class="newsrow">
+        @for (int col = 0; col < itemsPerRow; col++)
+        {
+            int index = row * itemsPerRow + col;
+            if (index < Model.Cars.Count)
+            {
+                var base64Image = Convert.ToBase64String(carsArray[index].Image);
+                var source = String.Format("data:image/png;base64,{0}", base64Image);
+                <div class="cardiv">
+                    <div class="cartitlediv"><label class="cartitle">@String.Format("{0} {1} {2} г.", carsArray[index].Brand, carsArray[index].Model, carsArray[index].Year)</label></div>
+                    <img class="carimage" src="@source" />
+                    <div class="carpropertiesdiv"><label class="carproperty">Цена: @carsArray[index].Price $</label></div>
+                    <div class="carpropertiesdiv"><label class="carproperty">Объем двигателя: @carsArray[index].EngineVolume л.</label></div>
+                    <div class="carpropertiesdiv"><label class="carproperty">Тип двигателя: @carsArray[index].EngineType</label></div>
+                    <div class="carpropertiesdiv"><label class="carproperty">Тип привода: @carsArray[index].DriveUnit</label></div>
+                    <div class="carpropertiesdiv"><label class="carproperty">Тип КПП: @carsArray[index].Transmission</label></div>
+                    @* <div class="newsbottomdiv">
+                        <div>
+                            <label class="datelabel">@newsArray[index].Date</label>
+                        </div>
+                        @if (CurrentUser.admin == 1)
+                        {
+                            <div>
+                                <a class="deletenewbutton" href="DeleteNews?id=@newsArray[index].ID">Удалить</a>
+                                <a class="deletenewbutton" href="EditNews?id=@newsArray[index].ID">Редактировать</a>
+                            </div>
+                        }
+                    </div> *@
+                </div>
+            }
+        }
+    </div>
+}
+

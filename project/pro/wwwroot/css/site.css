@@ -1,0 +1,555 @@
+/* Шрифты */
+
+@font-face {
+    font-family: "BAUHAS_lt";
+    src: url('bauhas_lt(RUS BY LYAJKA).ttf');
+}
+
+@font-face {
+    font-family: "Cruinn";
+    src: url('ofont.ru_Cruinn.ttf');
+}
+
+/* Шрифты */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Стили для навигационной панели сверху */
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+header {
+    width: 100%;
+    padding-left: 8%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 8%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    border-bottom: 2px solid #800;
+    border-color: red;
+    margin-bottom: 15px;
+    position: fixed;
+    top: 0;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    padding-left: 8%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 8%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    border-top: 2px solid #800;
+    border-color: red;
+    margin-top: auto;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.logo1 {
+    font-weight: 600;
+    font-size: 25px;
+    color: red;
+}
+
+header nav {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+header nav a {
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.navdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+header nav a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    color: red;
+    text-decoration: underline
+}
+
+
+
+/* Текущий пользователь */
+
+.currentuserdiv {
+    margin-top: 5px;
+    display: inline-block;
+    vertical-align: central;
+}
+
+.currentuserlabel {
+}
+
+.logoutbtnform{
+    float: right;
+    margin-left: 10px;
+}
+
+.logoutbtn{
+    background: transparent;
+    border: 0px;
+    color: darkgrey;
+}
+
+.logoutbtn:hover {
+    background: transparent;
+    border: 0px;
+    color: red;
+    text-decoration: underline;
+}
+
+/* Текущий пользователь */
+
+
+
+/* Стили для навигационной панели сверху */
+
+
+
+/* Див в котором отображаются представления */
+
+.div80 {
+    width: 80%;
+    border: 2px solid black;
+    float: right;
+    background-color: grey;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    min-height: 95%;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+}
+
+/* Див в котором отображаются представления */
+
+
+
+/* Дивы для разметки представления Authorization */
+
+.div30 {
+    width: 40%;
+    float: right;
+    background: #333;
+    border: 1px solid red;
+    border-radius: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.authpagediv{
+    margin-left: 17%;
+    margin-right: 17%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Дивы для разметки представления Authorization */
+
+
+
+/* Представление AddNew */
+
+.addnewpagediv
+{
+    margin-left: 30%;
+    margin-right: 30%
+}
+
+.addnewdiv {
+    width: 100%;
+    background: #333;
+    border: 1px solid red;
+    border-radius: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.selectfile{
+    color: lightgrey;
+}
+
+.descinput {
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+
+.descinput:focus {
+    outline: 1px solid red;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Представление AddNew */
+
+
+
+/* Представление News */
+
+.newstitlediv {
+    width: 100%;
+    padding-top: 3px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.newstitle{
+    height: 80px;
+    color: darkgrey;
+    font-weight: bold;
+    font-size: 25px;
+    word-wrap: break-word;
+}
+
+.newsrow{
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 35px;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.newsdiv {
+    width: 49%;
+    background: #333;
+    border: 1px solid red;
+    border-radius: 15px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.newsimage {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    height: 330px;
+}
+
+.newsdescdiv {
+    margin-top: 25px;
+    width: 100%;
+    padding-top: 3px;
+    margin-bottom: 5px;
+}
+
+.newsdesc {
+    width: 100%;
+    color: darkgrey;
+    font-family: Cruinn;
+    font-size: 15px;
+    word-wrap: break-word;
+}
+
+.datelabel {
+    color: white;
+    font-size: 12px;
+}
+
+/* Представление News */
+
+
+
+/* Стили для заголовка сверху дива для представлений */
+
+.titlediv {
+    width: 100%;
+    height: 150px;
+    justify-content: center;
+    display: flex;
+    padding-top: 30px;
+}
+
+.title {
+    font-family: Cruinn;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+/* Стили для заголовка сверху дива для представлений */
+
+
+
+/* Стили для блоков регистрации и авторизации на представлении Authorization */
+
+.regdiv {
+    width: 100%;
+    height: 90%;
+    justify-content: center;
+    display: flex;
+    padding-top: 15px;
+}
+
+.regtitlediv {
+    width: 100%;
+    height: 30px;
+    justify-content: center;
+    display: flex;
+    padding-top: 3px;
+}
+
+.regtitle {
+    font-family: Cruinn;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+.alreadyloginlabel
+{
+    color: white;
+    font-family: Cruinn;
+}
+
+/* Стили для блоков регистрации и авторизации на представлении Authorization */
+
+
+
+/* Стили для полей ввода информации в блоках регистрации и авторизации */
+
+.reglabel {
+    font-family: Cruinn;
+    font-size: 15px;
+    color: white;
+}
+
+.reginput {
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.reginput:focus {
+    outline: 1px solid red;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.regform {
+    width: 100%;
+    height: 100%;
+}
+
+.regtextdiv {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.regerrorspan {
+    font-family: Cruinn;
+    color: red;
+    font-size: 12px;
+}
+
+.regbtn {
+    margin-top: 40px;
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid red;
+    background-color: white;
+    color: black; 
+}
+
+.regbtn:hover {
+    border: 2px solid white;
+    background-color: red;
+    color: white;
+}
+
+/* Стили для полей ввода информации в блоках регистрации и авторизации */
+
+
+
+/* Стили для спанов, отображающих результат авторизации */
+
+.successspantrue {
+    font-family: Cruinn;
+    color: greenyellow;
+    font-size: 20px;
+}
+
+.successspanfalse {
+    font-family: Cruinn;
+    color: red;
+    font-size: 20px;
+}
+
+/* Стили для спанов, отображающих результат авторизации */
+
+
+/* Низ новости */
+
+.deletenewbutton {
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.deletenewbutton:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.deletenewbutton:hover {
+    color: red;
+    text-decoration: underline
+}
+
+.newsbottomdiv {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Низ новости */
+
+
+/* Представление CarList */
+
+.newcarlinkdiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.newcarlink {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.newcarlink:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.newcarlink:hover {
+    color: red;
+    text-decoration: underline
+}
+
+.cardiv {
+    width: 32%;
+    background: #333;
+    border: 1px solid red;
+    border-radius: 15px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cartitlediv {
+    width: 100%;
+    padding-top: 3px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.cartitle {
+    height: 80px;
+    color: darkgrey;
+    font-weight: bold;
+    font-size: 25px;
+    word-wrap: break-word;
+}
+
+.carimage {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+.carpropertiesdiv {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+
+.carproperty {
+    width: 100%;
+    color: darkgrey;
+    font-family: Cruinn;
+    font-size: 15px;
+}
+
+.numberlabel {
+    color: white;
+    font-family: Cruinn;
+    font-size: 15px;
+}
+
+/* Представление CarList */

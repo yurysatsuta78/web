@@ -1,0 +1,23 @@
+﻿@using Models
+@model AuthViewModel
+@{
+    ViewData["Title"] = "Авторизация";
+}
+<div class="authpagediv">
+    <div class="div30">
+        <div class="regtitlediv">
+            <h1 class="regtitle">Зарегистрироваться</h1>
+        </div>
+        <div class="regdiv">          
+            <partial name="_Reg" for="RegViewModel" />
+        </div>
+    </div>
+    <div class="div30">
+        <div class="regtitlediv">
+            <h1 class="regtitle">Авторизоваться</h1>
+        </div>
+        <div class="regdiv">
+            <partial name="_Log" for="LoginViewModel" />
+        </div>
+    </div>
+</div>
